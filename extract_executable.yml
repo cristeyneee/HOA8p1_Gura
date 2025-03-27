@@ -1,0 +1,11 @@
+- name: Extract Executable from PCAP
+  hosts: control_node
+  gather_facts: no
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Ensure tshark is installed
+      apt:
+        name: tshark
+        state: present
+

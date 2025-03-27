@@ -1,0 +1,11 @@
+[Unit]
+Description=TShark Packet Capture Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/tshark -i eth0 -w /var/log/tshark_capture.pcap
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
